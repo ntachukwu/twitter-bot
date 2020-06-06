@@ -1,3 +1,2 @@
-web: python server.py
+web: gunicorn -w 4  server:app
 
-worker: python favretweet.py
