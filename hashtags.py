@@ -25,7 +25,7 @@ for tweet in tweepy.Cursor(api.search, q=('#HNG OR #owerritech OR #dsc OR #DSC O
 
     except tweepy.TweepError as error:
         print('n\Error. Retweet not successful. Reason')
-        print(e.reason)
+        print(error.reason)
 
     except StopIteration:
         break
