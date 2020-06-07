@@ -1,9 +1,17 @@
 import tweepy
 from time import sleep
-from config import create_api
+from os import environ
 
 # Access and authorize our Twitter credentials from credentials.py
-api = create_api()
+consumer_key = environ["CONSUMER_KEY"]
+consumer_secret = environ["CONSUMER_SECRET"]
+access_token = environ["ACCESS_TOKEN"]
+access_token_secret = environ["ACCESS_TOKEN_SECRET"]
+
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+auth.set_access_token(access_token, access_token_secret)
+api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
+
 for tweet in tweepy.Cursor(api.search, q=('#HNG OR #owerritech OR #dsc OR #DSC OR #dscowerri OR #intern OR #blacklivesmatter OR #hng #python #programming #programmer OR #internship -filter:retweets'), lang='en').items(5):
     try:
             # Add \n escape character to print() to organize tweets
