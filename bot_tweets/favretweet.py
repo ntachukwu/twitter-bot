@@ -43,4 +43,4 @@ def main(keywords):
     stream.filter(track=keywords, languages=["en"])
 
 if __name__ == "__main__":
-    main(["Python", "HNG", "internship", "imsu", "owerritech", "programming", "Tweepy", "beginner", "blacklivesmatter"])
+    main(["Python", "HNG", "internship", "imsu", "owerritech", "programming", "Tweepy", "beginner", "blacklivesmatter", "hng", "intern", "dscimo", "dscimsu", "program", "ai","machine", "learning"])
